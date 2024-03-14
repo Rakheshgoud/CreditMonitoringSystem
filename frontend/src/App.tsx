@@ -6,6 +6,7 @@ function App() {
   const [previousScore, setPreviousScore] = useState(0);
   const [nextUpdateDate, setNextUpdateDate] = useState("");
   const [showWaysToIncrease, setShowWaysToIncrease] = useState(false);
+  const [display, setDisplay] = useState(false)
 
   // Function to generate next update date (13th of next month)
   function getNextUpdateDate() {
@@ -22,6 +23,7 @@ function App() {
     if (!creditScore) {
       const newScore = Math.floor(Math.random() * (850 - 300 + 1) + 300); // Random score between 300 and 850
       setCreditScore(newScore);
+      setDisplay(true)
       setNextUpdateDate(getNextUpdateDate());
     }
   };
@@ -59,12 +61,12 @@ function App() {
       <header>
         <h2>Welcome to CRED</h2>
         <h1 className="title">Credit Monitoring System</h1>
-        {creditScore && <p>Your current credit score is: <strong>{creditScore}</strong></p>}
+        { display && creditScore && <p>Your current credit score is: <strong>{creditScore}</strong></p>}
       </header>
-      <main>
-        {!creditScore && <button onClick={updateCreditScore}>Check My Credit Score</button>}
-        {creditScore && <button onClick={showPreviousScore}>Previous Score</button>}
-        {creditScore && (
+      <div>
+        {!creditScore !== undefined && <button onClick={updateCreditScore}>Check My Credit Score</button>}
+        {display && creditScore !== undefined && <button onClick={showPreviousScore}>Previous Score</button>}
+        {display && creditScore !== undefined && (
           <button onClick={() => setShowWaysToIncrease(!showWaysToIncrease)}>
             {showWaysToIncrease ? 'Close Ways to Increase' : 'Ways to Increase Credit Score'}
           </button>
@@ -77,8 +79,8 @@ function App() {
             ))}
           </div>
         )}
-        {creditScore && <button onClick={checkNextUpdate}>Next Update</button>}
-      </main>
+        {display && creditScore!== undefined && <button onClick={checkNextUpdate}>Next Update</button>}
+      </div>
       <footer>
         <p>Next update: {nextUpdateDate ? nextUpdateDate : 'N/A'}</p>
       </footer>
