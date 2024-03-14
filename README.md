@@ -1,30 +1,51 @@
-# React + TypeScript + Vite
+# Credit Monitoring System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Credit Monitoring System!  This is a user credit score monitoring application.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+Follow these steps to set up Food Temperature Tracker on your local machine:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Clone the repository:**
 
-- Configure the top-level `parserOptions` property like this:
+    ```bash
+    git clone https://github.com/Rakheshgoud/CreditMonitoringSystem.git
+    ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+2. **Navigate to the project folder:**
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+    ```bash
+    cd rp
+    ```
+
+3. **Install server dependencies:**
+
+    ```bash
+    cd backend
+    npm install
+    ```
+
+4. **Install client dependencies:**
+
+    ```bash
+    cd ../frontend
+    npm install
+    ```
+5. **Start the server:**
+
+    ```bash
+    cd ../backend
+    node index.js
+    ```
+
+6. **Start the client:**
+
+    ```bash
+    cd ../frontend
+    npm run dev
+    ```
+
+7. **Access the website:**
+
+    Open your browser and go to [http://localhost:3000]
